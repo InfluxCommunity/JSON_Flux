@@ -7,7 +7,7 @@ JSON = bytes(v: "{\"a\": 1,
             \"nestedList\": [{\"alpha\": \"foo1\", \"beta\": \"bar1\"}, {\"alpha\": \"foo2\", \"beta\": \"foo2\"}],
             \"time\": 1596632400000000000},
            {\"b\": 1.2, 
- 	\"nestedList\": [{\"alpha\": \"foo1\", \"beta\": \"bar1\"}, {\"alpha\": \"foo2\", \"beta\": \"foo2\"}],
+ 	       \"nestedList\": [{\"alpha\": \"null\", \"beta\": \"bar1\"}, {\"alpha\": \"foo2\", \"beta\": \"foo2\"}],
             \"time\": 1596632500000000000}
           ]
 }" )
@@ -36,4 +36,3 @@ list = listData |> array.map(fn:(x) => {
              }
          })
 array.from(rows: list)
-
