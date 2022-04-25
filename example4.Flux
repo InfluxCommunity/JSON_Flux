@@ -23,10 +23,16 @@ listData = jsonData.list
 // map across each complex type in the array named “list” 
 list = listData |> array.map(fn:(x) => {
              pendingList = x.nestedList
+                 |> array.filter(fn: (x) => x.alpha == "foo1")
+             pendingAlpha = if length(arr: pendingList) == 1
+                 then
+                     pendingList[0].alpha
+                 else
+                     "foo1"
              return {
                  id: x.b,
                  _time: time(v: int(v: x.time)),
-                 alpha: pendingList[0].alpha,
+                 alpha: pendingAlpha,
              }
          })
 array.from(rows: list)
